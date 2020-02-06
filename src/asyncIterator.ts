@@ -101,6 +101,7 @@ export class Executor<T, O extends ExecutorOptions<T>, F extends AsyncTask<T>> {
   }
 }
 
+// noinspection JSUnusedGlobalSymbols
 export class Sequential<T = any> extends Executor<T, ExecutorOptions<T>, AsyncTask<T>> {
 
   public async _run() {
@@ -129,6 +130,7 @@ function shouldStop(availableSlots: number, index: number, length: number) {
   return availableSlots <= 0 || index >= length;
 }
 
+// noinspection JSUnusedGlobalSymbols
 export class Concurrent<T = any> extends Executor<T, ConcurrentExecutorOptions<T>, AsyncTask<T>> {
 
   public async _run() {
